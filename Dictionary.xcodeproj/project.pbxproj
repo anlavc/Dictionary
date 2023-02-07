@@ -9,21 +9,39 @@
 /* Begin PBXBuildFile section */
 		EEF100F22992C89900BCFC45 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF100F12992C89900BCFC45 /* AppDelegate.swift */; };
 		EEF100F42992C89900BCFC45 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF100F32992C89900BCFC45 /* SceneDelegate.swift */; };
-		EEF100F62992C89900BCFC45 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF100F52992C89900BCFC45 /* ViewController.swift */; };
 		EEF100F92992C89900BCFC45 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EEF100F72992C89900BCFC45 /* Main.storyboard */; };
 		EEF100FB2992C89A00BCFC45 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EEF100FA2992C89A00BCFC45 /* Assets.xcassets */; };
 		EEF100FE2992C89A00BCFC45 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EEF100FC2992C89A00BCFC45 /* LaunchScreen.storyboard */; };
+		EEF101112992CA4D00BCFC45 /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF1010F2992CA4D00BCFC45 /* SearchTableViewCell.swift */; };
+		EEF101122992CA4D00BCFC45 /* SearchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EEF101102992CA4D00BCFC45 /* SearchTableViewCell.xib */; };
+		EEF101142992CCD700BCFC45 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF101132992CCD700BCFC45 /* SearchViewController.swift */; };
+		EEF101172992D2E500BCFC45 /* SearchDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF101162992D2E500BCFC45 /* SearchDetailViewController.swift */; };
+		EEF1011A2992D36200BCFC45 /* SearchDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF101182992D36200BCFC45 /* SearchDetailTableViewCell.swift */; };
+		EEF1011B2992D36200BCFC45 /* SearchDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EEF101192992D36200BCFC45 /* SearchDetailTableViewCell.xib */; };
+		EEF101222992DD1300BCFC45 /* CustomHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EEF101202992DD1300BCFC45 /* CustomHeaderView.xib */; };
+		EEF101242992E31B00BCFC45 /* CustomHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF101232992E31B00BCFC45 /* CustomHeaderView.swift */; };
+		EEF1012D2992E9FC00BCFC45 /* HeaderCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF1012B2992E9FC00BCFC45 /* HeaderCollectionViewCell.swift */; };
+		EEF1012E2992E9FC00BCFC45 /* HeaderCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EEF1012C2992E9FC00BCFC45 /* HeaderCollectionViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		EEF100EE2992C89900BCFC45 /* Dictionary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dictionary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EEF100F12992C89900BCFC45 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EEF100F32992C89900BCFC45 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		EEF100F52992C89900BCFC45 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		EEF100F82992C89900BCFC45 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EEF100FA2992C89A00BCFC45 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EEF100FD2992C89A00BCFC45 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EEF100FF2992C89A00BCFC45 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EEF1010F2992CA4D00BCFC45 /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
+		EEF101102992CA4D00BCFC45 /* SearchTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchTableViewCell.xib; sourceTree = "<group>"; };
+		EEF101132992CCD700BCFC45 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		EEF101162992D2E500BCFC45 /* SearchDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDetailViewController.swift; sourceTree = "<group>"; };
+		EEF101182992D36200BCFC45 /* SearchDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDetailTableViewCell.swift; sourceTree = "<group>"; };
+		EEF101192992D36200BCFC45 /* SearchDetailTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchDetailTableViewCell.xib; sourceTree = "<group>"; };
+		EEF101202992DD1300BCFC45 /* CustomHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomHeaderView.xib; sourceTree = "<group>"; };
+		EEF101232992E31B00BCFC45 /* CustomHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomHeaderView.swift; sourceTree = "<group>"; };
+		EEF1012B2992E9FC00BCFC45 /* HeaderCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderCollectionViewCell.swift; sourceTree = "<group>"; };
+		EEF1012C2992E9FC00BCFC45 /* HeaderCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderCollectionViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +74,104 @@
 		EEF100F02992C89900BCFC45 /* Dictionary */ = {
 			isa = PBXGroup;
 			children = (
-				EEF100F12992C89900BCFC45 /* AppDelegate.swift */,
-				EEF100F32992C89900BCFC45 /* SceneDelegate.swift */,
-				EEF100F52992C89900BCFC45 /* ViewController.swift */,
+				EEF101092992C92500BCFC45 /* Extensions */,
+				EEF101082992C90500BCFC45 /* Services */,
+				EEF101072992C8FD00BCFC45 /* ViewModel */,
+				EEF101062992C8F600BCFC45 /* Resources */,
+				EEF101052992C8ED00BCFC45 /* Controller */,
 				EEF100F72992C89900BCFC45 /* Main.storyboard */,
-				EEF100FA2992C89A00BCFC45 /* Assets.xcassets */,
-				EEF100FC2992C89A00BCFC45 /* LaunchScreen.storyboard */,
 				EEF100FF2992C89A00BCFC45 /* Info.plist */,
 			);
 			path = Dictionary;
+			sourceTree = "<group>";
+		};
+		EEF101052992C8ED00BCFC45 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				EEF1010A2992CA2000BCFC45 /* SearchViewController */,
+				EEF101152992D2C000BCFC45 /* SearchDetailViewController */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		EEF101062992C8F600BCFC45 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				EEF100F12992C89900BCFC45 /* AppDelegate.swift */,
+				EEF100F32992C89900BCFC45 /* SceneDelegate.swift */,
+				EEF100FC2992C89A00BCFC45 /* LaunchScreen.storyboard */,
+				EEF100FA2992C89A00BCFC45 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		EEF101072992C8FD00BCFC45 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		EEF101082992C90500BCFC45 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		EEF101092992C92500BCFC45 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		EEF1010A2992CA2000BCFC45 /* SearchViewController */ = {
+			isa = PBXGroup;
+			children = (
+				EEF101132992CCD700BCFC45 /* SearchViewController.swift */,
+				EEF1010F2992CA4D00BCFC45 /* SearchTableViewCell.swift */,
+				EEF101102992CA4D00BCFC45 /* SearchTableViewCell.xib */,
+			);
+			path = SearchViewController;
+			sourceTree = "<group>";
+		};
+		EEF101152992D2C000BCFC45 /* SearchDetailViewController */ = {
+			isa = PBXGroup;
+			children = (
+				EEF101162992D2E500BCFC45 /* SearchDetailViewController.swift */,
+				EEF1011C2992DCDC00BCFC45 /* Header */,
+				EEF1011D2992DCE500BCFC45 /* Center */,
+				EEF1011E2992DCE900BCFC45 /* Footer */,
+			);
+			path = SearchDetailViewController;
+			sourceTree = "<group>";
+		};
+		EEF1011C2992DCDC00BCFC45 /* Header */ = {
+			isa = PBXGroup;
+			children = (
+				EEF101202992DD1300BCFC45 /* CustomHeaderView.xib */,
+				EEF101232992E31B00BCFC45 /* CustomHeaderView.swift */,
+				EEF1012B2992E9FC00BCFC45 /* HeaderCollectionViewCell.swift */,
+				EEF1012C2992E9FC00BCFC45 /* HeaderCollectionViewCell.xib */,
+			);
+			path = Header;
+			sourceTree = "<group>";
+		};
+		EEF1011D2992DCE500BCFC45 /* Center */ = {
+			isa = PBXGroup;
+			children = (
+				EEF101182992D36200BCFC45 /* SearchDetailTableViewCell.swift */,
+				EEF101192992D36200BCFC45 /* SearchDetailTableViewCell.xib */,
+			);
+			path = Center;
+			sourceTree = "<group>";
+		};
+		EEF1011E2992DCE900BCFC45 /* Footer */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Footer;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -126,7 +233,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				EEF100FE2992C89A00BCFC45 /* LaunchScreen.storyboard in Resources */,
+				EEF101122992CA4D00BCFC45 /* SearchTableViewCell.xib in Resources */,
+				EEF1011B2992D36200BCFC45 /* SearchDetailTableViewCell.xib in Resources */,
 				EEF100FB2992C89A00BCFC45 /* Assets.xcassets in Resources */,
+				EEF1012E2992E9FC00BCFC45 /* HeaderCollectionViewCell.xib in Resources */,
+				EEF101222992DD1300BCFC45 /* CustomHeaderView.xib in Resources */,
 				EEF100F92992C89900BCFC45 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -138,8 +249,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EEF100F62992C89900BCFC45 /* ViewController.swift in Sources */,
+				EEF101242992E31B00BCFC45 /* CustomHeaderView.swift in Sources */,
+				EEF1012D2992E9FC00BCFC45 /* HeaderCollectionViewCell.swift in Sources */,
+				EEF101112992CA4D00BCFC45 /* SearchTableViewCell.swift in Sources */,
+				EEF101172992D2E500BCFC45 /* SearchDetailViewController.swift in Sources */,
 				EEF100F22992C89900BCFC45 /* AppDelegate.swift in Sources */,
+				EEF101142992CCD700BCFC45 /* SearchViewController.swift in Sources */,
+				EEF1011A2992D36200BCFC45 /* SearchDetailTableViewCell.swift in Sources */,
 				EEF100F42992C89900BCFC45 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
