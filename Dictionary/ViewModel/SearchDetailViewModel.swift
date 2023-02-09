@@ -9,12 +9,17 @@ import Foundation
 
 class DetailListViewModel {
     private let service = WebService()
-    var searchResult = [SearchResultModel]()
+    private var searchResult = [SearchResultModel]()
   
     var meanings = [Meaning]()
     func numberOfRowsSection(_ section: Int) -> Int {
         return meanings.count
     }
+    func cellForRowAt(_ index: Int) -> HeaderViewModel {
+        let result = searchResult[index]
+        return HeaderViewModel(searchResult: result)
+    }
+
     func fetchSearchResult(_ searchText: String,completion: @escaping(Result<[SearchResultModel],NetworkError>) -> ()) {
         guard let url = URL(string: "\(ApiConstrants.searchUrl)\(searchText)") else {return}
         let resource = Resource<[SearchResultModel]> (url: url)

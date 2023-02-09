@@ -13,6 +13,7 @@ class SearchDetailViewController: UIViewController {
     private var footercell = "CustomFooterView"
     @IBOutlet weak var detailTableView: UITableView!
     private var detailviewModel = DetailListViewModel()
+    
     var searchText: String!
     var totalSection = Int()
     override func viewDidLoad() {
@@ -79,8 +80,8 @@ extension SearchDetailViewController: UITableViewDataSource, UITableViewDelegate
         if section == 0 {
             
             let headerView = detailTableView.dequeueReusableHeaderFooterView(withIdentifier: headercell) as? CustomHeaderView
-            headerView?.titleLabel.text = "Home"
-            headerView?.detailLabel.text = "/home/"
+            headerView?.titleLabel.text = detailviewModel.cellForRowAt(0).word
+            headerView?.detailLabel.text = detailviewModel.cellForRowAt(0).phonetic
             return headerView
         } else {
             return nil
