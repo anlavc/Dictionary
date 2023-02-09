@@ -18,7 +18,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xCm-7B-Zq2">
-                        <rect key="frame" x="0.0" y="2" width="419" height="149"/>
+                        <rect key="frame" x="0.0" y="1" width="419" height="151"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="JFw-Ip-fLz" userLabel="header">
                                 <rect key="frame" x="20" y="14.000000000000002" width="66" height="21.666666666666671"/>
@@ -39,22 +39,22 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="Vkp-1H-yLH" userLabel="center">
-                                <rect key="frame" x="20" y="50.666666666666664" width="385" height="84.333333333333343"/>
+                                <rect key="frame" x="20" y="50.666666666666664" width="385" height="86.333333333333343"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A One’s native land; the place or country in which one dwells; the place where one’s ancestors dwell or dwelt." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IqL-Zd-Md7">
-                                        <rect key="frame" x="0.0" y="0.0" width="385" height="23.333333333333332"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="385" height="86.333333333333329"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="One’s native land; the place or country in which one dwells; the place where one’s ancestors dwell or dwelt." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rsl-xj-9Hn">
-                                        <rect key="frame" x="0.0" y="30.333333333333336" width="385" height="23.666666666666664"/>
+                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Example" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rsl-xj-9Hn">
+                                        <rect key="frame" x="0.0" y="86.333333333333343" width="385" height="0.0"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The locality where a thing is usually found, or was first found, or where it is naturally abundant; habitat; seat." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JoE-OE-APN">
-                                        <rect key="frame" x="0.0" y="61.000000000000007" width="385" height="23.333333333333336"/>
+                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The locality where a thing is usually found, or was first found, or where it is naturally abundant; habitat; seat." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JoE-OE-APN">
+                                        <rect key="frame" x="0.0" y="86.333333333333343" width="385" height="0.0"/>
                                         <fontDescription key="fontDescription" type="italicSystem" pointSize="12"/>
                                         <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -76,8 +76,8 @@
                 <color key="backgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.94901960780000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="xCm-7B-Zq2" secondAttribute="trailing" id="2zR-EI-SnL"/>
-                    <constraint firstAttribute="bottom" secondItem="xCm-7B-Zq2" secondAttribute="bottom" constant="2" id="4sH-H0-fIT"/>
-                    <constraint firstItem="xCm-7B-Zq2" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="2" id="U0D-f9-FiQ"/>
+                    <constraint firstAttribute="bottom" secondItem="xCm-7B-Zq2" secondAttribute="bottom" constant="1" id="4sH-H0-fIT"/>
+                    <constraint firstItem="xCm-7B-Zq2" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="1" id="U0D-f9-FiQ"/>
                     <constraint firstItem="xCm-7B-Zq2" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="b02-j5-mMn"/>
                 </constraints>
             </tableViewCellContentView>

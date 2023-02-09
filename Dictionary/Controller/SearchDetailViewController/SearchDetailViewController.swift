@@ -10,45 +10,103 @@ import UIKit
 class SearchDetailViewController: UIViewController {
   private var cell = "detailCell"
     private var headercell = "CustomHeaderView"
-
+    private var footercell = "CustomFooterView"
     @IBOutlet weak var detailTableView: UITableView!
+    private var detailviewModel = DetailListViewModel()
+    var searchText: String!
+    var totalSection = Int()
     override func viewDidLoad() {
         super.viewDidLoad()
         detailTableView.register(UINib(nibName: "SearchDetailTableViewCell", bundle: nil), forCellReuseIdentifier: cell)
         detailTableView.register(UINib(nibName: "CustomHeaderView", bundle: nil), forHeaderFooterViewReuseIdentifier: headercell)
+        detailTableView.register(UINib(nibName: "CustomFooterView", bundle: nil), forHeaderFooterViewReuseIdentifier: footercell)
         detailTableView.dataSource = self
         detailTableView.delegate = self
+        loadSearchResult()
+        print("\(ApiConstrants.searchUrl)\(searchText!)")
+        detailTableView.sectionHeaderTopPadding = 0
         
     }
-    
+    func loadSearchResult() {
+        self.detailviewModel.fetchSearchResult(self.searchText ?? "") { result in
+            switch result {
+            case .success(_ ):
+                DispatchQueue.main.async { [weak self] in
+                    guard let self = self else { return }
+                    self.detailTableView.reloadData()
+                }
+            case .failure(_ ):
+                DispatchQueue.main.async { [weak self] in
+                    guard let self = self else { return }
+                    print("hata var")
+                }
+            }
+        }
+    }
 
 }
 extension SearchDetailViewController: UITableViewDataSource, UITableViewDelegate {
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return detailviewModel.meanings.count
+        
     }
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+      
+        return detailviewModel.meanings[section].definitions.count
+    }
+
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+       
         let cell = detailTableView.dequeueReusableCell(withIdentifier: cell, for:  indexPath) as! SearchDetailTableViewCell
-        cell.numberLabel.text = "1-"
-        cell.sectionTitle.text = "Noun"
-        cell.meaningOneLabel.text = "One’s native land; the place or country in which one dwells; the place where one’s ancestors dwell or dwelt."
-        cell.meaninTwoLabel.text = "Example"
-        cell.meaninThreeLabel.text = "The missile was able to home in on the target."
+       
+        cell.numberLabel.text = "\(indexPath.row + 1)-"
+        cell.sectionTitle.text = detailviewModel.meanings[indexPath.section].partOfSpeech
+        cell.meaningOneLabel.text = detailviewModel.meanings[indexPath.section].definitions[indexPath.row].definition
+       
+        if let examplesTitle = detailviewModel.meanings[indexPath.section].definitions[indexPath.row].example {
+            cell.meaninTwoLabel.text = "Example"
+            cell.meaninThreeLabel.text = examplesTitle
+            cell.meaninTwoLabel.isHidden = false
+            cell.meaninThreeLabel.isHidden = false
+        }
+    
+        
         return cell
     }
    
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let headerView = detailTableView.dequeueReusableHeaderFooterView(withIdentifier: headercell) as? CustomHeaderView
-        headerView?.titleLabel.text = "Home"
-        headerView?.detailLabel.text = "/home/"
+        if section == 0 {
+            
+            let headerView = detailTableView.dequeueReusableHeaderFooterView(withIdentifier: headercell) as? CustomHeaderView
+            headerView?.titleLabel.text = "Home"
+            headerView?.detailLabel.text = "/home/"
+            return headerView
+        } else {
+            return nil
+        }
         
-        
-        
-        return headerView
     }
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 160
+        if section == 0 {
+            return CGFloat(screenHeight * 0.17)
+        } else {
+            return 0
+        }
+    }
+    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        if section == detailviewModel.meanings.count - 1 {
+            let footerView = detailTableView.dequeueReusableHeaderFooterView(withIdentifier: footercell) as? CustomFooterView
+            return footerView
+        } else {
+            return nil
+        }
+    }
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        if section == detailviewModel.meanings.count - 1 {
+            return CGFloat(screenHeight * 0.15)
+        } else {
+            return CGFloat(0)
+        }
     }
 }
