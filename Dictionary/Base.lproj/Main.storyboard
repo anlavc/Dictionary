@@ -59,7 +59,7 @@
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="searchButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="h2w-Lv-dMK"/>
-                                    <segue destination="8ET-Kr-7td" kind="show" identifier="searchtoDetail" id="bgE-lq-uUK"/>
+                                    <segue destination="8ET-Kr-7td" kind="show" identifier="searchtoDetail" id="wth-08-AAR"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -93,7 +93,7 @@
         <!--Search Detail View Controller-->
         <scene sceneID="O7F-7E-z1f">
             <objects>
-                <viewController id="8ET-Kr-7td" customClass="SearchDetailViewController" customModule="Dictionary" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="searchVC" id="8ET-Kr-7td" customClass="SearchDetailViewController" customModule="Dictionary" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="klf-VZ-8Si">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

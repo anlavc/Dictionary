@@ -10,7 +10,8 @@ import UIKit
 class CustomFooterView: UITableViewHeaderFooterView {
     private var collectionCell = "footerCell"
     @IBOutlet weak var collectionView: UICollectionView!
-    
+    private var synonymviewModel = SynonymListViewModel()
+    var searchText: String?
     let flowLayout: UICollectionViewFlowLayout = {
         let layout = UICollectionViewFlowLayout()
         layout.minimumInteritemSpacing = 10
@@ -21,6 +22,8 @@ class CustomFooterView: UITableViewHeaderFooterView {
     override func awakeFromNib() {
         super.awakeFromNib()
         configureHeaderView()
+        loadSynonymResult()
+        print(searchText)
     }
 
     private func configureHeaderView() {
@@ -29,18 +32,34 @@ class CustomFooterView: UITableViewHeaderFooterView {
         
         collectionView.register(UINib(nibName: "FooterCollectionViewCell", bundle: .main), forCellWithReuseIdentifier: collectionCell)
     }
+    func loadSynonymResult() {
+        self.synonymviewModel.fetchSearchResult("home" ?? "") { result in
+            switch result {
+            case .success(_ ):
+                DispatchQueue.main.async { [weak self] in
+                    guard let self = self else { return }
+                    self.collectionView.reloadData()
+                }
+            case .failure(_ ):
+                DispatchQueue.main.async { [weak self] in
+                    guard self != nil else { return }
+                    print("hata var")
+                }
+            }
+        }
+    }
     }
     
 
 extension CustomFooterView: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 4
+        return synonymviewModel.synonyms.prefix(5).count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: collectionCell, for: indexPath) as? FooterCollectionViewCell
         guard let cell = cell else { return UICollectionViewCell()}
-        cell.label.text = "House"
+        cell.label.text = synonymviewModel.synonyms[indexPath.row].word
         return cell
     }
     

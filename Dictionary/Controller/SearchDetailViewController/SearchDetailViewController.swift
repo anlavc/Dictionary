@@ -38,7 +38,7 @@ class SearchDetailViewController: UIViewController {
                 }
             case .failure(_ ):
                 DispatchQueue.main.async { [weak self] in
-                    guard let self = self else { return }
+                    guard self != nil else { return }
                     print("hata var")
                 }
             }
@@ -78,10 +78,11 @@ extension SearchDetailViewController: UITableViewDataSource, UITableViewDelegate
    
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         if section == 0 {
-            
             let headerView = detailTableView.dequeueReusableHeaderFooterView(withIdentifier: headercell) as? CustomHeaderView
             headerView?.titleLabel.text = detailviewModel.cellForRowAt(0).word
             headerView?.detailLabel.text = detailviewModel.cellForRowAt(0).phonetic
+//            headerView?.counts = detailviewModel.cellForRowAt(section).word.count
+           
             return headerView
         } else {
             return nil
@@ -111,3 +112,4 @@ extension SearchDetailViewController: UITableViewDataSource, UITableViewDelegate
         }
     }
 }
+

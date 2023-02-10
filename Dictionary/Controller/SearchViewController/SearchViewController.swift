@@ -36,16 +36,14 @@ class SearchViewController: UIViewController {
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if !searchTextField.text.isNilOrEmpty {
-            if segue.identifier == "searchtoDetail" {
+          
 
-                let gidilecekVC = segue.destination as! SearchDetailViewController
+                let detailVC = segue.destination as! SearchDetailViewController
+            
                 
-                gidilecekVC.searchText = searchTextField.text!
-
-            } else {
-                
-                print("boş alan var")
-            }
+                detailVC.searchText = searchTextField.text!
+             
+         
         }
    
     }

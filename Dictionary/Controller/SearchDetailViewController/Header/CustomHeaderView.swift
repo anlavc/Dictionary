@@ -14,15 +14,14 @@ class CustomHeaderView: UITableViewHeaderFooterView {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var detailLabel: UILabel!
     private var collectionCell = "collectionCell"
-    
+    var headerCellItems = ["Noun", "Verb", "Adjective", "Adverb"]
+
+ 
     override func awakeFromNib() {
         super.awakeFromNib()
         configureHeaderView()
-   
-      
-        
-       
     }
+
     private func configureHeaderView() {
         collectionView.delegate = self
         collectionView.dataSource = self
@@ -47,14 +46,13 @@ class CustomHeaderView: UITableViewHeaderFooterView {
 }
 extension CustomHeaderView: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 3
+        return headerCellItems.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: collectionCell, for: indexPath) as? HeaderCollectionViewCell
         guard let cell = cell else { return UICollectionViewCell()}
-        cell.label.text = "Noun"
-        
+        cell.label.text =  headerCellItems[indexPath.row]
         return cell
     }
 
