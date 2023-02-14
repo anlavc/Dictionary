@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 
 class CustomHeaderView: UITableViewHeaderFooterView {
@@ -15,12 +16,29 @@ class CustomHeaderView: UITableViewHeaderFooterView {
     @IBOutlet weak var detailLabel: UILabel!
     private var collectionCell = "collectionCell"
     var headerCellItems = ["Noun", "Verb", "Adjective", "Adverb"]
-
+    var audioPlayer: AVPlayer?
+    var audio: String?
+    
  
     override func awakeFromNib() {
         super.awakeFromNib()
         configureHeaderView()
+      
     }
+    private func playAudioFromURL() {
+        guard let url = URL(string: "https://api.dictionaryapi.dev/media/pronunciations/en/word-us.mp3" ?? "yok") else {
+            print("error to get the mp3 file")
+            return
+        }
+        do {
+            audioPlayer = try AVPlayer(url: url as URL)
+        } catch {
+            print("audio file error")
+        }
+        audioPlayer?.play()
+    }
+
+
 
     private func configureHeaderView() {
         collectionView.delegate = self
@@ -41,6 +59,7 @@ class CustomHeaderView: UITableViewHeaderFooterView {
 //        }
     }
     @IBAction func soundButtonPressed(_ sender: UIButton) {
+      playAudioFromURL()
     }
     
 }

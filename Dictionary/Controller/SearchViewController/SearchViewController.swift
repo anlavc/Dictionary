@@ -6,7 +6,6 @@
 //
 
 import UIKit
-
 class SearchViewController: UIViewController {
 
     @IBOutlet weak var searchTextField: UITextField!
@@ -32,19 +31,20 @@ class SearchViewController: UIViewController {
        
     }
     @IBAction func searchButtonPressed(_ sender: Any) {
-        
+       
     }
+  
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if !searchTextField.text.isNilOrEmpty {
-          
+            if segue.identifier == "searchtoDetail" {
+              let gidilecekVC = segue.destination as! SearchDetailViewController
+               gidilecekVC.searchText = searchTextField.text! 
+            } else {
+                print("boş alan var")
+            }
 
-                let detailVC = segue.destination as! SearchDetailViewController
-            
-                
-                detailVC.searchText = searchTextField.text!
-             
-         
         }
+
    
     }
 }

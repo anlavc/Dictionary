@@ -8,10 +8,11 @@
 import UIKit
 
 class CustomFooterView: UITableViewHeaderFooterView {
+ 
     private var collectionCell = "footerCell"
     @IBOutlet weak var collectionView: UICollectionView!
     private var synonymviewModel = SynonymListViewModel()
-    var searchText: String?
+    var searchWord: String?
     let flowLayout: UICollectionViewFlowLayout = {
         let layout = UICollectionViewFlowLayout()
         layout.minimumInteritemSpacing = 10
@@ -19,21 +20,24 @@ class CustomFooterView: UITableViewHeaderFooterView {
         layout.sectionInset = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
         return layout
     }()
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         configureHeaderView()
         loadSynonymResult()
-        print(searchText)
+        print("Gelen word func: \(searchWord  ?? "yok")")
+      
     }
 
     private func configureHeaderView() {
         collectionView.delegate = self
         collectionView.dataSource = self
-        
         collectionView.register(UINib(nibName: "FooterCollectionViewCell", bundle: .main), forCellWithReuseIdentifier: collectionCell)
     }
+
     func loadSynonymResult() {
-        self.synonymviewModel.fetchSearchResult("home" ?? "") { result in
+        
+        self.synonymviewModel.fetchSearchResult("word" ?? "") { result in
             switch result {
             case .success(_ ):
                 DispatchQueue.main.async { [weak self] in
@@ -59,7 +63,8 @@ extension CustomFooterView: UICollectionViewDelegate, UICollectionViewDataSource
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: collectionCell, for: indexPath) as? FooterCollectionViewCell
         guard let cell = cell else { return UICollectionViewCell()}
-        cell.label.text = synonymviewModel.synonyms[indexPath.row].word
+        cell.setup(word: synonymviewModel.synonyms[indexPath.row])
+      
         return cell
     }
     

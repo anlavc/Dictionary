@@ -17,5 +17,5 @@ struct HeaderViewModel {
     var phonetic: String {
         return searchResult.phonetic ?? ""
     }
-    
+  
 }
