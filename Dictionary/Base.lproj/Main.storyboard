@@ -11,7 +11,7 @@
         <!--Search View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="SearchViewController" customModule="Dictionary" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="searchHomeVC" id="BYZ-38-t0r" customClass="SearchViewController" customModule="Dictionary" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -103,19 +103,30 @@
                                 <rect key="frame" x="0.0" y="103" width="393" height="715"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
+                            <activityIndicatorView hidden="YES" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="Tk1-Ir-QOX">
+                                <rect key="frame" x="186.66666666666666" y="416" width="20" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="0a8-iP-cDa"/>
+                                    <constraint firstAttribute="width" constant="20" id="hcQ-N2-cd4"/>
+                                </constraints>
+                                <color key="color" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="xZd-iF-Uax"/>
                         <color key="backgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.94901960780000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="i5A-nW-YqV" firstAttribute="top" secondItem="xZd-iF-Uax" secondAttribute="top" id="0zB-2K-alY"/>
+                            <constraint firstItem="Tk1-Ir-QOX" firstAttribute="centerX" secondItem="klf-VZ-8Si" secondAttribute="centerX" id="G0Y-2C-LRV"/>
                             <constraint firstItem="i5A-nW-YqV" firstAttribute="leading" secondItem="xZd-iF-Uax" secondAttribute="leading" id="b5D-XM-QTQ"/>
                             <constraint firstItem="xZd-iF-Uax" firstAttribute="trailing" secondItem="i5A-nW-YqV" secondAttribute="trailing" id="cUx-2b-LVn"/>
+                            <constraint firstItem="Tk1-Ir-QOX" firstAttribute="centerY" secondItem="klf-VZ-8Si" secondAttribute="centerY" id="fEF-4o-nrF"/>
                             <constraint firstItem="xZd-iF-Uax" firstAttribute="bottom" secondItem="i5A-nW-YqV" secondAttribute="bottom" id="zvF-Jc-xts"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="eic-Kr-M9A"/>
                     <connections>
                         <outlet property="detailTableView" destination="i5A-nW-YqV" id="vAF-qU-FFh"/>
+                        <outlet property="spinner" destination="Tk1-Ir-QOX" id="cvT-8L-lAT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kcs-jo-P2T" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

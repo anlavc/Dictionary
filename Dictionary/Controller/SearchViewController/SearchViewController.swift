@@ -125,6 +125,7 @@ extension SearchViewController: UITableViewDelegate,UITableViewDataSource {
         return searchArray.count == nil ? 0 : searchArray.prefix(5).count
     }
         func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let cell = searchTableView.dequeueReusableCell(withIdentifier: cell, for:  indexPath) as! SearchTableViewCell
         cell.searchLabel.text = searchArray.reversed()[indexPath.row]
         return cell
