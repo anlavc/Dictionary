@@ -9,27 +9,31 @@ import UIKit
 
 class SearchDetailViewController: UIViewController {
     
-   
+    
     private var cell = "detailCell"
     private var headercell = "CustomHeaderView"
     private var footercell = "CustomFooterView"
     @IBOutlet weak var detailTableView: UITableView!
     private var detailviewModel = DetailListViewModel()
     var searchText: String!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableRegisterandDelegate()
+        loadSearchResult()
+        print("\(ApiConstrants.searchUrl)\(searchText!)")
+        detailTableView.sectionHeaderTopPadding = 0
+        
+        
+    }
+    private func tableRegisterandDelegate() {
         detailTableView.register(UINib(nibName: "SearchDetailTableViewCell", bundle: nil), forCellReuseIdentifier: cell)
         detailTableView.register(UINib(nibName: "CustomHeaderView", bundle: nil), forHeaderFooterViewReuseIdentifier: headercell)
         detailTableView.register(UINib(nibName: "CustomFooterView", bundle: nil), forHeaderFooterViewReuseIdentifier: footercell)
         detailTableView.dataSource = self
         detailTableView.delegate = self
-        loadSearchResult()
-        print("\(ApiConstrants.searchUrl)\(searchText!)")
-        detailTableView.sectionHeaderTopPadding = 0
-    
-      
     }
-  
+    
     func loadSearchResult() {
         self.detailviewModel.fetchSearchResult(self.searchText ?? "") { result in
             switch result {
@@ -46,53 +50,44 @@ class SearchDetailViewController: UIViewController {
             }
         }
     }
-
+    
 }
 extension SearchDetailViewController: UITableViewDataSource, UITableViewDelegate {
     func numberOfSections(in tableView: UITableView) -> Int {
-//        return detailviewModel.meanings.count
+        
         if detailviewModel.meanings.count == 0 {
-        detailTableView.setEmptyView(title: "Invalid Value", message: "No results were found for the search term.")
+            detailTableView.setEmptyView(title: "Invalid Value", message: "No results were found for the search term.")
         }
         else {
-        detailTableView.restore()
+            detailTableView.restore()
         }
-
-        
         return detailviewModel.meanings.count
-        
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-      
+        
         return detailviewModel.meanings[section].definitions.count
     }
-
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-       
+        
         let cell = detailTableView.dequeueReusableCell(withIdentifier: cell, for:  indexPath) as! SearchDetailTableViewCell
         cell.numberLabel.text = "\(indexPath.row + 1)-"
         cell.sectionTitle.text = detailviewModel.meanings[indexPath.section].partOfSpeech
         cell.meaningOneLabel.text = detailviewModel.meanings[indexPath.section].definitions[indexPath.row].definition
-       
+        
         if let examplesTitle = detailviewModel.meanings[indexPath.section].definitions[indexPath.row].example {
             cell.meaninTwoLabel.text = "Example"
             cell.meaninThreeLabel.text = examplesTitle
             cell.meaninTwoLabel.isHidden = false
             cell.meaninThreeLabel.isHidden = false
         }
-    
-        
         return cell
-        
     }
-   
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         if section == 0 {
             let headerView = detailTableView.dequeueReusableHeaderFooterView(withIdentifier: headercell) as? CustomHeaderView
             headerView?.titleLabel.text = detailviewModel.cellForRowAt(0).word
             headerView?.detailLabel.text = detailviewModel.cellForRowAt(0).phonetic
-//            headerView?.counts = detailviewModel.cellForRowAt(section).word.count
+            //            headerView?.counts = detailviewModel.cellForRowAt(section).word.count
             return headerView
         } else {
             return nil
@@ -111,7 +106,7 @@ extension SearchDetailViewController: UITableViewDataSource, UITableViewDelegate
         footerView?.searchWord = searchText
         return footerView
     }
-   
+    
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         if section == detailviewModel.meanings.count - 1 {
             return CGFloat(screenHeight * 0.15)
