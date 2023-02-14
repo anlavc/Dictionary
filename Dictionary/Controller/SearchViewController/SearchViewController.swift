@@ -7,64 +7,67 @@
 
 import UIKit
 class SearchViewController: UIViewController {
-
+    
     @IBOutlet weak var searchTextField: UITextField!
     @IBOutlet weak var searchView: UIView!
     @IBOutlet weak var searchButton: UIButton!
     @IBOutlet weak var searchTableView: UITableView!
     private var cell = "searchCell"
     var searchArray = [String]()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         searchTableView.register(UINib(nibName: "SearchTableViewCell", bundle: nil), forCellReuseIdentifier: cell)
+        setupDelegate()
+        searchTextView()
+    }
+    private func setupDelegate() {
         searchTableView.delegate = self
         searchTableView.dataSource = self
+    }
+    private func searchTextView() {
         searchView.layer.shadowColor = UIColor.gray.cgColor
         searchView.layer.shadowOffset = CGSize(width: 0.0, height: 1.0)
         searchView.layer.masksToBounds = false
         searchView.layer.shadowRadius = 1.0
         searchView.layer.shadowOpacity = 0.5
         searchView.layer.cornerRadius = 10
-       
     }
     override func viewWillAppear(_ animated: Bool) {
         if let data = UserDefaults.standard.object(forKey: "searchText") as? [String] {
             searchArray = data.uniqued()
             searchTableView.reloadData()
         } else {
-            print("yok")
+            print("Arama fonksiyonunda veri çekilirken bir sorunla karşılaştı")
         }
     }
     @IBAction func searchButtonPressed(_ sender: Any) {
-        if searchTextField.text != "" {
+        if !searchTextField.text.isNilOrEmpty {
             searchArray.append(searchTextField.text!)
             UserDefaults.standard.set(searchArray, forKey: "searchText")
-            searchTableView.reloadData()
+            performSegue(withIdentifier: "searchtoDetail", sender: nil)
         } else {
-            print("alan boş")
+            DispatchQueue.main.async { [weak self] in
+            guard let self = self else { return }
+            self.showAlertView(title: "Error!", message: "You should write a word...", alertActions: [])
+            }
         }
     }
-  
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if !searchTextField.text.isNilOrEmpty {
+       
             if segue.identifier == "searchtoDetail" {
-              let gidilecekVC = segue.destination as! SearchDetailViewController
-               gidilecekVC.searchText = searchTextField.text! 
-            } else {
-                print("boş alan var")
+                let gidilecekVC = segue.destination as! SearchDetailViewController
+                gidilecekVC.searchText = searchTextField.text!
+                
             }
 
-        }
-
-   
     }
 }
 // MARK: - Table view data source
 extension SearchViewController: UITableViewDelegate,UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return searchArray.count == nil ? 0 : searchArray.prefix(5).count
-
+        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -80,6 +83,6 @@ extension SearchViewController: UITableViewDelegate,UITableViewDataSource {
         vc?.searchText = searchArray.reversed()[indexPath.row]
         self.navigationController?.pushViewController(vc!, animated: true)
     }
-
+    
 }
 

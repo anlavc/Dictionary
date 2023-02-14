@@ -59,7 +59,6 @@
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="searchButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="h2w-Lv-dMK"/>
-                                    <segue destination="8ET-Kr-7td" kind="show" identifier="searchtoDetail" id="wth-08-AAR"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -84,6 +83,7 @@
                         <outlet property="searchTableView" destination="TOo-Yc-klK" id="WT6-5q-JHS"/>
                         <outlet property="searchTextField" destination="g5m-Wx-M70" id="uB3-vC-VAb"/>
                         <outlet property="searchView" destination="anS-xk-pgs" id="IrF-9k-EQO"/>
+                        <segue destination="8ET-Kr-7td" kind="show" identifier="searchtoDetail" id="YYB-pc-HbS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

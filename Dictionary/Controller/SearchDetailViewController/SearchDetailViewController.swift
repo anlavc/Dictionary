@@ -26,6 +26,8 @@ class SearchDetailViewController: UIViewController {
         loadSearchResult()
         print("\(ApiConstrants.searchUrl)\(searchText!)")
         detailTableView.sectionHeaderTopPadding = 0
+    
+      
     }
   
     func loadSearchResult() {
@@ -48,6 +50,15 @@ class SearchDetailViewController: UIViewController {
 }
 extension SearchDetailViewController: UITableViewDataSource, UITableViewDelegate {
     func numberOfSections(in tableView: UITableView) -> Int {
+//        return detailviewModel.meanings.count
+        if detailviewModel.meanings.count == 0 {
+        detailTableView.setEmptyView(title: "Invalid Value", message: "No results were found for the search term.")
+        }
+        else {
+        detailTableView.restore()
+        }
+
+        
         return detailviewModel.meanings.count
         
     }
@@ -97,7 +108,7 @@ extension SearchDetailViewController: UITableViewDataSource, UITableViewDelegate
     }
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         let footerView = detailTableView.dequeueReusableHeaderFooterView(withIdentifier: footercell) as? CustomFooterView
-        //footerView?.searchWord = searchText
+        footerView?.searchWord = searchText
         return footerView
     }
    
