@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Ol9-Jh-tcU">
-    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <device id="retina6_12" orientation="portrait" appearance="dark"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -43,7 +42,7 @@
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="TOo-Yc-klK">
                                 <rect key="frame" x="20" y="161" width="353" height="607"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1y3-c6-vRZ">
@@ -63,7 +62,7 @@
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="1y3-c6-vRZ" firstAttribute="top" secondItem="TOo-Yc-klK" secondAttribute="bottom" constant="10" id="1D3-Nc-VcW"/>
                             <constraint firstItem="1y3-c6-vRZ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="3Kn-Qg-eWt"/>
@@ -79,7 +78,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="hZ0-B4-GNW"/>
                     <connections>
-                        <outlet property="searchButton" destination="1y3-c6-vRZ" id="hDR-aL-3Zx"/>
+                        <outlet property="loginButtonBottomConstraint" destination="qev-7f-MWb" id="8Zk-qd-Q1N"/>
+                        <outlet property="searchButton" destination="1y3-c6-vRZ" id="QHH-2H-e9Y"/>
                         <outlet property="searchTableView" destination="TOo-Yc-klK" id="WT6-5q-JHS"/>
                         <outlet property="searchTextField" destination="g5m-Wx-M70" id="uB3-vC-VAb"/>
                         <outlet property="searchView" destination="anS-xk-pgs" id="IrF-9k-EQO"/>
@@ -142,8 +142,5 @@
     </scenes>
     <resources>
         <image name="magnifyingglass" catalog="system" width="128" height="117"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
     </resources>
 </document>

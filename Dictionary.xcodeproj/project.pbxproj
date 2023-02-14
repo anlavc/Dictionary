@@ -115,12 +115,12 @@
 		EEF100F02992C89900BCFC45 /* Dictionary */ = {
 			isa = PBXGroup;
 			children = (
-				EEC7115C2993932200AEC1F6 /* Model */,
 				EEF101092992C92500BCFC45 /* Extensions */,
 				EEF101082992C90500BCFC45 /* Services */,
+				EEC7115C2993932200AEC1F6 /* Model */,
 				EEF101072992C8FD00BCFC45 /* ViewModel */,
-				EEF101062992C8F600BCFC45 /* Resources */,
 				EEF101052992C8ED00BCFC45 /* Controller */,
+				EEF101062992C8F600BCFC45 /* Resources */,
 				EEF100F72992C89900BCFC45 /* Main.storyboard */,
 				EEF100FF2992C89A00BCFC45 /* Info.plist */,
 			);
