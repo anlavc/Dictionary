@@ -25,18 +25,18 @@ class CustomHeaderView: UITableViewHeaderFooterView {
         configureHeaderView()
       
     }
-    private func playAudioFromURL() {
-        guard let url = URL(string: "https://api.dictionaryapi.dev/media/pronunciations/en/word-us.mp3" ?? "yok") else {
-            print("error to get the mp3 file")
-            return
-        }
-        do {
-            audioPlayer = try AVPlayer(url: url as URL)
-        } catch {
-            print("audio file error")
-        }
-        audioPlayer?.play()
-    }
+//    private func playAudioFromURL() {
+//        guard let url = URL(string: "https://api.dictionaryapi.dev/media/pronunciations/en/word-us.mp3" ?? "yok") else {
+//            print("error to get the mp3 file")
+//            return
+//        }
+//        do {
+//            audioPlayer = try AVPlayer(url: url as URL)
+//        } catch {
+//            print("audio file error")
+//        }
+//        audioPlayer?.play()
+//    }
 
 
 
@@ -59,7 +59,7 @@ class CustomHeaderView: UITableViewHeaderFooterView {
 //        }
     }
     @IBAction func soundButtonPressed(_ sender: UIButton) {
-      playAudioFromURL()
+      //playAudioFromURL()
     }
     
 }

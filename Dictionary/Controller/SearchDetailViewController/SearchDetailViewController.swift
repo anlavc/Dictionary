@@ -26,12 +26,8 @@ class SearchDetailViewController: UIViewController {
         loadSearchResult()
         print("\(ApiConstrants.searchUrl)\(searchText!)")
         detailTableView.sectionHeaderTopPadding = 0
-     
-      
     }
-    func wordFunc() -> String {
-        return searchText
-    }
+  
     func loadSearchResult() {
         self.detailviewModel.fetchSearchResult(self.searchText ?? "") { result in
             switch result {
@@ -101,6 +97,7 @@ extension SearchDetailViewController: UITableViewDataSource, UITableViewDelegate
     }
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         let footerView = detailTableView.dequeueReusableHeaderFooterView(withIdentifier: footercell) as? CustomFooterView
+        //footerView?.searchWord = searchText
         return footerView
     }
    

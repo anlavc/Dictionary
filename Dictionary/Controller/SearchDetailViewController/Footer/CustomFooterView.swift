@@ -25,7 +25,7 @@ class CustomFooterView: UITableViewHeaderFooterView {
         super.awakeFromNib()
         configureHeaderView()
         loadSynonymResult()
-        print("Gelen word func: \(searchWord  ?? "yok")")
+        print("Gelen word func: \(searchWord ?? "yok")")
       
     }
 
@@ -37,7 +37,7 @@ class CustomFooterView: UITableViewHeaderFooterView {
 
     func loadSynonymResult() {
         
-        self.synonymviewModel.fetchSearchResult("word" ?? "") { result in
+        self.synonymviewModel.fetchSearchResult(searchWord ?? "") { result in
             switch result {
             case .success(_ ):
                 DispatchQueue.main.async { [weak self] in
