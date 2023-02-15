@@ -23,8 +23,8 @@
                                         <rect key="frame" x="5" y="14.999999999999998" width="20.333333333333332" height="18.666666666666664"/>
                                         <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </imageView>
-                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Search word" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="g5m-Wx-M70">
-                                        <rect key="frame" x="30.333333333333343" y="12.333333333333327" width="317.66666666666663" height="23.333333333333329"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Search word..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="g5m-Wx-M70">
+                                        <rect key="frame" x="30.333333333333343" y="12.333333333333327" width="322.66666666666663" height="23.333333333333329"/>
                                         <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -35,7 +35,7 @@
                                     <constraint firstItem="g5m-Wx-M70" firstAttribute="centerY" secondItem="anS-xk-pgs" secondAttribute="centerY" id="9YJ-6s-CeK"/>
                                     <constraint firstItem="Zpg-nn-lzg" firstAttribute="leading" secondItem="anS-xk-pgs" secondAttribute="leading" constant="5" id="Ej5-Ks-yyI"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="48" id="FZH-vs-IfS"/>
-                                    <constraint firstAttribute="trailing" secondItem="g5m-Wx-M70" secondAttribute="trailing" constant="5" id="JGd-wl-W8d"/>
+                                    <constraint firstAttribute="trailing" secondItem="g5m-Wx-M70" secondAttribute="trailing" id="JGd-wl-W8d"/>
                                     <constraint firstAttribute="height" constant="48" id="N9X-eK-I6Z"/>
                                     <constraint firstItem="g5m-Wx-M70" firstAttribute="leading" secondItem="Zpg-nn-lzg" secondAttribute="trailing" constant="5" id="kB3-eQ-Cs7"/>
                                     <constraint firstItem="Zpg-nn-lzg" firstAttribute="centerY" secondItem="anS-xk-pgs" secondAttribute="centerY" id="myd-cw-bf5"/>
@@ -131,7 +131,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kcs-jo-P2T" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1884.7328244274809" y="-19.014084507042256"/>
+            <point key="canvasLocation" x="1906" y="-35"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="rPq-Jm-EeC">

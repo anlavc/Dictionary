@@ -15,7 +15,7 @@ class SearchViewController: UIViewController {
     @IBOutlet weak var loginButtonBottomConstraint: NSLayoutConstraint!
     private var cell = "searchCell"
     var searchArray = [String]()
-
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,7 +24,9 @@ class SearchViewController: UIViewController {
         searchTextView()
         keyboardNotification()
         searchTableView.backgroundColor = .white
+        
     }
+    
     //MARK: -   Notifications for when the keyboard opens/closes
     private func keyboardNotification() {
         self.searchTextField.delegate = self
@@ -50,7 +52,6 @@ class SearchViewController: UIViewController {
     @objc func keyboardWillHide(_ notification: NSNotification) {
         moveViewWithKeyboard(notification: notification, viewBottomConstraint: self.loginButtonBottomConstraint, keyboardWillShow: false)
     }
-    
     func moveViewWithKeyboard(notification: NSNotification, viewBottomConstraint: NSLayoutConstraint, keyboardWillShow: Bool) {
         // Keyboard's size
         guard let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else { return }
@@ -98,17 +99,37 @@ class SearchViewController: UIViewController {
             print("Arama fonksiyonunda veri çekilirken bir sorunla karşılaştı")
         }
     }
+    //Text Correct
+    func checkWord(word: String) -> Bool {
+        let wordChecker = UITextChecker()
+        let textRange = NSRange(location: 0, length: word.count)
+        let textMisspelledRange = wordChecker.rangeOfMisspelledWord(in: word, range: textRange, startingAt: 0, wrap: false, language: "en")
+        return textMisspelledRange.location == NSNotFound
+    }
+    
     //MARK: - SearchButton
     @IBAction func searchButtonPressed(_ sender: Any) {
-        if !searchTextField.text.isNilOrEmpty {
+        if !searchTextField.text.isNilOrEmpty && checkWord(word:searchTextField.text!) == true  {
             searchArray.append(searchTextField.text!)
             UserDefaults.standard.set(searchArray, forKey: "searchText")
             performSegue(withIdentifier: "searchtoDetail", sender: nil)
         } else {
-            DispatchQueue.main.async { [weak self] in
-                guard let self = self else { return }
-                self.showAlertView(title: "Error!", message: "You should write a word...", alertActions: [])
+           
+            if checkWord(word:searchTextField.text!) == false {
+                searchTextField.addDottedBottomLine()
+                DispatchQueue.main.async { [weak self] in
+                    guard let self = self else { return }
+                    self.showAlertView(title: "Error Word!", message: "You entered an incorrect word.", alertActions: [])
+                }
+            } else if searchTextField.text.isNilOrEmpty {
+                DispatchQueue.main.async { [weak self] in
+                    guard let self = self else { return }
+                    self.showAlertView(title: "Error!", message: "You should write a word...", alertActions: [])
+                    
+                }
             }
+         
+            keyboardWillHide(NSNotification(name: UIResponder.keyboardWillHideNotification, object: nil))
         }
     }
     //MARK: - Segue to SearchDetail
@@ -124,7 +145,7 @@ extension SearchViewController: UITableViewDelegate,UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return searchArray.count == nil ? 0 : searchArray.prefix(5).count
     }
-        func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = searchTableView.dequeueReusableCell(withIdentifier: cell, for:  indexPath) as! SearchTableViewCell
         cell.searchLabel.text = searchArray.reversed()[indexPath.row]
@@ -144,5 +165,14 @@ extension SearchViewController: UITextFieldDelegate {
         // Close keyboard when you press 'return'
         textField.resignFirstResponder()
         return true
+    }
+    func textFieldDidEndEditing(_ textField: UITextField, reason: UITextField.DidEndEditingReason) {
+        if searchTextField.text == "" {
+            for layer in searchTextField.layer.sublayers ?? [] {
+                if let shapelayer = layer as? CAShapeLayer {
+                    shapelayer.removeFromSuperlayer()
+                }
+            }
+        }
     }
 }

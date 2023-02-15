@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EE50D069299CCCBC00AB2999 /* TextFieldLine + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE50D068299CCCBC00AB2999 /* TextFieldLine + Ext.swift */; };
 		EE8F35FC2996E75E00AE2A25 /* SynonymModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE8F35FB2996E75E00AE2A25 /* SynonymModel.swift */; };
 		EE8F35FE2996E7AD00AE2A25 /* SynonymViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE8F35FD2996E7AD00AE2A25 /* SynonymViewModel.swift */; };
 		EE92175B299BC53200F79499 /* ArrayFilter + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE92175A299BC53200F79499 /* ArrayFilter + Ext.swift */; };
@@ -41,6 +42,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		EE50D068299CCCBC00AB2999 /* TextFieldLine + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TextFieldLine + Ext.swift"; sourceTree = "<group>"; };
 		EE8F35FB2996E75E00AE2A25 /* SynonymModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SynonymModel.swift; sourceTree = "<group>"; };
 		EE8F35FD2996E7AD00AE2A25 /* SynonymViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SynonymViewModel.swift; sourceTree = "<group>"; };
 		EE92175A299BC53200F79499 /* ArrayFilter + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ArrayFilter + Ext.swift"; sourceTree = "<group>"; };
@@ -174,6 +176,7 @@
 				EE92175A299BC53200F79499 /* ArrayFilter + Ext.swift */,
 				EE92175C299BC95700F79499 /* Alert + Ext.swift */,
 				EE92175E299BCBCA00F79499 /* TableViewNil + Ext.swift */,
+				EE50D068299CCCBC00AB2999 /* TextFieldLine + Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -309,6 +312,7 @@
 			files = (
 				EEF101242992E31B00BCFC45 /* CustomHeaderView.swift in Sources */,
 				EE92175D299BC95700F79499 /* Alert + Ext.swift in Sources */,
+				EE50D069299CCCBC00AB2999 /* TextFieldLine + Ext.swift in Sources */,
 				EEA921ED299509B7006B1563 /* Optional + Ext.swift in Sources */,
 				EEC711602993935A00AEC1F6 /* Services.swift in Sources */,
 				EEF1012D2992E9FC00BCFC45 /* HeaderCollectionViewCell.swift in Sources */,
