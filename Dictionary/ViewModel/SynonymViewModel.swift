@@ -10,9 +10,11 @@ class SynonymListViewModel {
     private let service = WebService()
     private var searchResult = [SynonymResultModel]()
   
-    var synonyms = [SynonymResultModel]()
+
  
-  
+    func synonymResults() -> [String] {
+        return searchResult.map { $0.word! }
+    }
 
     func fetchSearchResult(_ searchText: String,completion: @escaping(Result<[SynonymResultModel],NetworkError>) -> ()) {
         guard let url = URL(string: "\(ApiConstrants.synonymUrl)\(searchText)") else {return}
@@ -21,7 +23,7 @@ class SynonymListViewModel {
             switch result {
             case .success(let data):
               
-                self.synonyms = data.sorted { $0.score! < $1.score! }
+                self.searchResult = data.sorted { $0.score! > $1.score! }
                 completion(.success(data))
             case .failure(let error):
                 completion(.failure(error))

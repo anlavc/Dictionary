@@ -15,15 +15,15 @@ class SearchDetailViewController: UIViewController {
     private var footercell = "CustomFooterView"
     @IBOutlet weak var detailTableView: UITableView!
     private var detailviewModel = DetailListViewModel()
+    private var synonymviewModel = SynonymListViewModel()
     var searchText: String!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         tableRegisterandDelegate()
         loadSearchResult()
-        print("\(ApiConstrants.searchUrl)\(searchText!)")
         detailTableView.sectionHeaderTopPadding = 0
-    
+        loadSynonymResult()
       
     }
     private func tableRegisterandDelegate() {
@@ -34,7 +34,22 @@ class SearchDetailViewController: UIViewController {
         detailTableView.dataSource = self
         detailTableView.delegate = self
     }
-
+    func loadSynonymResult() {
+     
+        self.synonymviewModel.fetchSearchResult(searchText ?? "") { result in
+            switch result {
+            case .success(_ ):
+                DispatchQueue.main.async { [weak self] in
+                    guard let self = self else { return }
+                }
+            case .failure(_ ):
+                DispatchQueue.main.async { [weak self] in
+                    guard self != nil else { return }
+                    print("hata var")
+                }
+            }
+        }
+    }
     func loadSearchResult() {
         spinner.startAnimating()
         self.detailviewModel.fetchSearchResult(self.searchText ?? "") { result in
@@ -96,7 +111,6 @@ extension SearchDetailViewController: UITableViewDataSource, UITableViewDelegate
             let headerView = detailTableView.dequeueReusableHeaderFooterView(withIdentifier: headercell) as? CustomHeaderView
             headerView?.titleLabel.text = detailviewModel.cellForRowAt(0).word
             headerView?.detailLabel.text = detailviewModel.cellForRowAt(0).phonetic
-//            headerView?.counts = detailviewModel.cellForRowAt(section).word.count
             return headerView
         } else {
             return nil
@@ -112,7 +126,7 @@ extension SearchDetailViewController: UITableViewDataSource, UITableViewDelegate
     }
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         let footerView = detailTableView.dequeueReusableHeaderFooterView(withIdentifier: footercell) as? CustomFooterView
-        footerView?.searchWord = searchText
+        footerView?.searchWord = synonymviewModel.synonymResults()
         return footerView
     }
 
