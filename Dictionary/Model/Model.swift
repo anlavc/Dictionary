@@ -12,7 +12,7 @@ struct SearchResultModel: Codable {
     let word, phonetic: String?
     let meanings: [Meaning]
     let sourceUrls: [String]
-   // let phonetics: [Phonetic]
+    let phonetics: [Phonetic]
 }
 
 

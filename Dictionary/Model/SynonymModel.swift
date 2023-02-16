@@ -8,6 +8,6 @@
 import Foundation
 struct SynonymResultModel: Codable {
     let word: String?
-    let score: Int?
+    let score: Int
 }
 typealias SynonymModel = [SynonymResultModel]

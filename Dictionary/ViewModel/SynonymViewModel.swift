@@ -23,7 +23,7 @@ class SynonymListViewModel {
             switch result {
             case .success(let data):
               
-                self.searchResult = data.sorted { $0.score! > $1.score! }
+                self.searchResult = data.sorted { ($0.score > $1.score) }
                 completion(.success(data))
             case .failure(let error):
                 completion(.failure(error))

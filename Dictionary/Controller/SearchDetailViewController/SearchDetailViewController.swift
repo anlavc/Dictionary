@@ -45,7 +45,7 @@ class SearchDetailViewController: UIViewController {
             case .failure(_ ):
                 DispatchQueue.main.async { [weak self] in
                     guard self != nil else { return }
-                    print("hata var")
+                    print("hata var synonym")
                 }
             }
         }
@@ -64,7 +64,7 @@ class SearchDetailViewController: UIViewController {
             case .failure(_ ):
                 DispatchQueue.main.async { [weak self] in
                     guard self != nil else { return }
-                    print("hata var")
+                    print("hata var detail")
                     // aranan sonuç gelmediyse 2 saniye bekle ve homevc geri dön indicator animasyonunu durdur ve gizle.
                     sleep(2)
                     self?.spinner.stopAnimating()
@@ -111,6 +111,7 @@ extension SearchDetailViewController: UITableViewDataSource, UITableViewDelegate
             let headerView = detailTableView.dequeueReusableHeaderFooterView(withIdentifier: headercell) as? CustomHeaderView
             headerView?.titleLabel.text = detailviewModel.cellForRowAt(0).word
             headerView?.detailLabel.text = detailviewModel.cellForRowAt(0).phonetic
+            headerView?.audioWord = detailviewModel.cellForRowAt(0).searchResult.phonetics[0].audio
             return headerView
         } else {
             return nil

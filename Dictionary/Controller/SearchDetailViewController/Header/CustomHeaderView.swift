@@ -18,6 +18,7 @@ class CustomHeaderView: UITableViewHeaderFooterView {
     var headerCellItems = ["Noun", "Verb", "Adjective", "Adverb"]
     var audioPlayer: AVPlayer?
     var audio: String?
+    var audioWord: String?
     
  
     override func awakeFromNib() {
@@ -25,18 +26,18 @@ class CustomHeaderView: UITableViewHeaderFooterView {
         configureHeaderView()
       
     }
-//    private func playAudioFromURL() {
-//        guard let url = URL(string: "https://api.dictionaryapi.dev/media/pronunciations/en/word-us.mp3" ?? "yok") else {
-//            print("error to get the mp3 file")
-//            return
-//        }
-//        do {
-//            audioPlayer = try AVPlayer(url: url as URL)
-//        } catch {
-//            print("audio file error")
-//        }
-//        audioPlayer?.play()
-//    }
+    private func playAudioFromURL() {
+        guard let url = URL(string: audioWord ?? "yok") else {
+            print("error to get the mp3 file")
+            return
+        }
+        do {
+            audioPlayer = try AVPlayer(url: url as URL)
+        } catch {
+            print("audio file error")
+        }
+        audioPlayer?.play()
+    }
 
 
 
@@ -51,15 +52,10 @@ class CustomHeaderView: UITableViewHeaderFooterView {
         soundButton.layer.shadowRadius = 2.0
         soundButton.layer.shadowOpacity = 0.5
         soundButton.layer.cornerRadius = soundButton.frame.width / 2
-     
-    
-       
-//        if let flowLayout = headerCollectionView?.collectionViewLayout as? UICollectionViewFlowLayout {
-//            flowLayout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
-//        }
+
     }
     @IBAction func soundButtonPressed(_ sender: UIButton) {
-      //playAudioFromURL()
+      playAudioFromURL()
     }
     
 }

@@ -15,7 +15,6 @@ class CustomFooterView: UITableViewHeaderFooterView {
     var searchWord: [String]? {
         didSet {
             collectionView.reloadData()
-      
         }
     }
     let flowLayout: UICollectionViewFlowLayout = {
