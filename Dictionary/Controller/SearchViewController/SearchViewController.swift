@@ -15,8 +15,6 @@ class SearchViewController: UIViewController {
     @IBOutlet weak var loginButtonBottomConstraint: NSLayoutConstraint!
     private var cell = "searchCell"
     var searchArray = [String]()
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         searchTableView.register(UINib(nibName: "SearchTableViewCell", bundle: nil), forCellReuseIdentifier: cell)
@@ -24,7 +22,7 @@ class SearchViewController: UIViewController {
         searchTextView()
         keyboardNotification()
         searchTableView.backgroundColor = .white
-        searchTextField.delegate = self
+        searchTableView.backgroundColor = .systemBackground
     }
     
     //MARK: -   Notifications for when the keyboard opens/closes
@@ -82,6 +80,7 @@ class SearchViewController: UIViewController {
     private func setupDelegate() {
         searchTableView.delegate = self
         searchTableView.dataSource = self
+        searchTextField.delegate = self
     }
     private func searchTextView() {
         searchView.layer.shadowColor = UIColor.gray.cgColor

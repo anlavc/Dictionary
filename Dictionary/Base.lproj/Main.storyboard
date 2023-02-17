@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Search View Controller-->
+        <!--Dictionary-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController storyboardIdentifier="searchHomeVC" id="BYZ-38-t0r" customClass="SearchViewController" customModule="Dictionary" customModuleProvider="target" sceneMemberID="viewController">
@@ -25,12 +25,12 @@
                                     </imageView>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Search word..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="g5m-Wx-M70">
                                         <rect key="frame" x="30.333333333333343" y="12.333333333333327" width="322.66666666666663" height="23.333333333333329"/>
-                                        <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstItem="g5m-Wx-M70" firstAttribute="centerY" secondItem="anS-xk-pgs" secondAttribute="centerY" id="9YJ-6s-CeK"/>
                                     <constraint firstItem="Zpg-nn-lzg" firstAttribute="leading" secondItem="anS-xk-pgs" secondAttribute="leading" constant="5" id="Ej5-Ks-yyI"/>
@@ -43,7 +43,7 @@
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="TOo-Yc-klK">
                                 <rect key="frame" x="20" y="161" width="353" height="607"/>
-                                <color key="backgroundColor" systemColor="systemRedColor"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1y3-c6-vRZ">
@@ -63,7 +63,7 @@
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="1y3-c6-vRZ" firstAttribute="top" secondItem="TOo-Yc-klK" secondAttribute="bottom" constant="10" id="1D3-Nc-VcW"/>
                             <constraint firstItem="1y3-c6-vRZ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="3Kn-Qg-eWt"/>
@@ -77,7 +77,7 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="anS-xk-pgs" secondAttribute="trailing" constant="20" id="reW-wL-ATQ"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="hZ0-B4-GNW"/>
+                    <navigationItem key="navigationItem" title="Dictionary" id="hZ0-B4-GNW"/>
                     <connections>
                         <outlet property="loginButtonBottomConstraint" destination="qev-7f-MWb" id="8Zk-qd-Q1N"/>
                         <outlet property="searchButton" destination="1y3-c6-vRZ" id="QHH-2H-e9Y"/>
@@ -113,7 +113,7 @@
                             </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="xZd-iF-Uax"/>
-                        <color key="backgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.94901960780000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="i5A-nW-YqV" firstAttribute="top" secondItem="xZd-iF-Uax" secondAttribute="top" id="0zB-2K-alY"/>
                             <constraint firstItem="Tk1-Ir-QOX" firstAttribute="centerX" secondItem="klf-VZ-8Si" secondAttribute="centerX" id="G0Y-2C-LRV"/>
@@ -141,6 +141,8 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="fdJ-os-fgw">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="tintColor" systemColor="labelColor"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -154,8 +156,11 @@
     </scenes>
     <resources>
         <image name="magnifyingglass" catalog="system" width="128" height="117"/>
-        <systemColor name="systemRedColor">
-            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <systemColor name="labelColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
     </resources>
 </document>

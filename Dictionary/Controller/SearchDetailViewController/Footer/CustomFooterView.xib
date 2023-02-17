@@ -27,7 +27,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="vZo-YZ-usA">
-                                <rect key="frame" x="0.0" y="39" width="499" height="177"/>
+                                <rect key="frame" x="2" y="39" width="495" height="177"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Pbq-vZ-eKn">
                                     <size key="itemSize" width="128" height="128"/>
@@ -39,12 +39,12 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="vZo-YZ-usA" secondAttribute="trailing" id="1Rg-5I-XRy"/>
                             <constraint firstItem="Yma-rG-kD4" firstAttribute="top" secondItem="1AG-fu-TQg" secondAttribute="top" constant="5" id="BC9-c3-oP5"/>
                             <constraint firstItem="Yma-rG-kD4" firstAttribute="leading" secondItem="1AG-fu-TQg" secondAttribute="leading" constant="20" id="BIj-gY-wjX"/>
                             <constraint firstItem="vZo-YZ-usA" firstAttribute="height" secondItem="1AG-fu-TQg" secondAttribute="height" multiplier="0.7" id="M35-ef-49L"/>
-                            <constraint firstItem="vZo-YZ-usA" firstAttribute="leading" secondItem="1AG-fu-TQg" secondAttribute="leading" id="kiJ-ol-VRY"/>
+                            <constraint firstItem="vZo-YZ-usA" firstAttribute="leading" secondItem="1AG-fu-TQg" secondAttribute="leading" constant="2" id="k92-Iv-Gh9"/>
                             <constraint firstItem="vZo-YZ-usA" firstAttribute="top" secondItem="Yma-rG-kD4" secondAttribute="bottom" constant="10" id="pom-UL-hnu"/>
+                            <constraint firstAttribute="trailing" secondItem="vZo-YZ-usA" secondAttribute="trailing" constant="2" id="uoa-Hk-iwT"/>
                         </constraints>
                     </view>
                 </subviews>

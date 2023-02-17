@@ -19,8 +19,18 @@ class CustomHeaderView: UITableViewHeaderFooterView {
     var audioPlayer: AVPlayer?
     var audio: String?
     var audioWord: String?
+    var isRed = false
+        var progressBarTimer: Timer!
+        var isRunning = false
+    @IBOutlet weak var progressBar: UIProgressView!
     
- 
+    let flowLayout: UICollectionViewFlowLayout = {
+        let layout = UICollectionViewFlowLayout()
+        layout.minimumInteritemSpacing = 5
+        layout.minimumLineSpacing = 5
+        layout.sectionInset = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
+        return layout
+    }()
     override func awakeFromNib() {
         super.awakeFromNib()
         configureHeaderView()
@@ -44,7 +54,6 @@ class CustomHeaderView: UITableViewHeaderFooterView {
     private func configureHeaderView() {
         collectionView.delegate = self
         collectionView.dataSource = self
-        
         collectionView.register(UINib(nibName: "HeaderCollectionViewCell", bundle: .main), forCellWithReuseIdentifier: collectionCell)
         soundButton.layer.shadowColor = UIColor.black.cgColor
         soundButton.layer.shadowOffset = CGSize(width: 0.0, height: 5.0)
@@ -52,7 +61,6 @@ class CustomHeaderView: UITableViewHeaderFooterView {
         soundButton.layer.shadowRadius = 2.0
         soundButton.layer.shadowOpacity = 0.5
         soundButton.layer.cornerRadius = soundButton.frame.width / 2
-
     }
     @IBAction func soundButtonPressed(_ sender: UIButton) {
       playAudioFromURL()
@@ -70,8 +78,15 @@ extension CustomHeaderView: UICollectionViewDelegate, UICollectionViewDataSource
         cell.label.text =  headerCellItems[indexPath.row]
         return cell
     }
-
-  
-  
+}
+extension CustomHeaderView: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let width = collectionView.bounds.width
+        let numberOfItemsPerRow: CGFloat = 3
+        let spacing: CGFloat = flowLayout.minimumInteritemSpacing
+        let availableWidth = width - spacing * (numberOfItemsPerRow + 1)
+        let itemDimensions = floor(availableWidth / numberOfItemsPerRow)
+        return CGSize(width: itemDimensions - 10, height: itemDimensions)
+    }
     
 }

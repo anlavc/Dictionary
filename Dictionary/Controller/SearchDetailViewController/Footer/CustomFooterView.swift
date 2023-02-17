@@ -28,6 +28,7 @@ class CustomFooterView: UITableViewHeaderFooterView {
     override func awakeFromNib() {
         super.awakeFromNib()
         configureHeaderView()
+        
     }
     private func configureHeaderView() {
         collectionView.delegate = self
@@ -35,8 +36,6 @@ class CustomFooterView: UITableViewHeaderFooterView {
         collectionView.register(UINib(nibName: "FooterCollectionViewCell", bundle: .main), forCellWithReuseIdentifier: collectionCell)
     }
     }
-    
-
 extension CustomFooterView: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return (searchWord?.prefix(5).count)!
@@ -47,7 +46,6 @@ extension CustomFooterView: UICollectionViewDelegate, UICollectionViewDataSource
         guard let cell = cell else { return UICollectionViewCell()}
         cell.label.text = searchWord?[indexPath.row]
        // cell.setup(word: searchWord[indexPath.row])
-      
         return cell
     }
     
@@ -57,10 +55,10 @@ extension CustomFooterView: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width = collectionView.bounds.width
         let numberOfItemsPerRow: CGFloat = 3
-        let spacing: CGFloat = flowLayout.minimumInteritemSpacing
+        let spacing: CGFloat = flowLayout.minimumInteritemSpacing + 20
         let availableWidth = width - spacing * (numberOfItemsPerRow + 1)
         let itemDimensions = floor(availableWidth / numberOfItemsPerRow)
-        return CGSize(width: itemDimensions, height: itemDimensions - 80)
+        return CGSize(width: itemDimensions - 10, height: itemDimensions - 50)
     }
     
 }

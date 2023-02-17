@@ -24,6 +24,8 @@ class SearchDetailViewController: UIViewController {
         loadSearchResult()
         detailTableView.sectionHeaderTopPadding = 0
         loadSynonymResult()
+        title = searchText
+        detailTableView.backgroundColor = .systemBackground
       
     }
     private func tableRegisterandDelegate() {
@@ -118,13 +120,13 @@ extension SearchDetailViewController: UITableViewDataSource, UITableViewDelegate
         }
 
     }
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        if section == 0 {
-            return CGFloat(screenHeight * 0.17)
-        } else {
-            return 0
-        }
-    }
+//    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+//        if section == 0 {
+//            return CGFloat(screenHeight * 0.17)
+//        } else {
+//            return 0
+//        }
+//    }
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         let footerView = detailTableView.dequeueReusableHeaderFooterView(withIdentifier: footercell) as? CustomFooterView
         footerView?.searchWord = synonymviewModel.synonymResults()

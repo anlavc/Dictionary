@@ -20,8 +20,8 @@ class FooterCollectionViewCell: UICollectionViewCell {
         view.layer.borderColor = UIColor.systemGray.cgColor
       
     }
-    func setup(word: SynonymResultModel) {
-        label.text = word.word
-    }
+//    func setup(word: SynonymResultModel) {
+//        label.text = word.word
+//    }
     
 }

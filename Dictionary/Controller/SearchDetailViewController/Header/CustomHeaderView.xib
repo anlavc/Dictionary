@@ -46,7 +46,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="CAA-kE-djJ">
-                                <rect key="frame" x="20" y="83" width="432" height="45"/>
+                                <rect key="frame" x="0.0" y="83" width="472" height="45"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="k2T-yz-cD6">
                                     <size key="itemSize" width="128" height="128"/>
@@ -55,20 +55,27 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                             </collectionView>
+                            <progressView hidden="YES" opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="2cQ-h2-g6A">
+                                <rect key="frame" x="1" y="1" width="470" height="4"/>
+                            </progressView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="Wfi-sK-rcG" secondAttribute="trailing" constant="20" id="1Qw-k8-NGP"/>
                             <constraint firstAttribute="bottom" secondItem="CAA-kE-djJ" secondAttribute="bottom" constant="20" id="2Ff-ct-n3D"/>
                             <constraint firstItem="Wfi-sK-rcG" firstAttribute="leading" secondItem="91u-Gu-qFX" secondAttribute="trailing" constant="30" id="Fa7-fj-mYc"/>
-                            <constraint firstAttribute="trailing" secondItem="CAA-kE-djJ" secondAttribute="trailing" constant="20" id="I4u-El-sGr"/>
+                            <constraint firstAttribute="trailing" secondItem="CAA-kE-djJ" secondAttribute="trailing" id="I4u-El-sGr"/>
                             <constraint firstItem="5zb-XV-w4R" firstAttribute="bottom" secondItem="Wfi-sK-rcG" secondAttribute="bottom" id="N0v-Je-K0y"/>
-                            <constraint firstItem="CAA-kE-djJ" firstAttribute="leading" secondItem="I0z-J0-9SM" secondAttribute="leading" constant="20" id="ROL-4P-hhj"/>
+                            <constraint firstItem="CAA-kE-djJ" firstAttribute="leading" secondItem="I0z-J0-9SM" secondAttribute="leading" id="ROL-4P-hhj"/>
+                            <constraint firstItem="2cQ-h2-g6A" firstAttribute="top" secondItem="I0z-J0-9SM" secondAttribute="top" constant="1" id="bX5-Fr-azB"/>
+                            <constraint firstItem="CAA-kE-djJ" firstAttribute="height" secondItem="I0z-J0-9SM" secondAttribute="height" multiplier="0.304054" id="c46-aM-6Fy"/>
                             <constraint firstItem="91u-Gu-qFX" firstAttribute="leading" secondItem="I0z-J0-9SM" secondAttribute="leading" constant="17" id="fEw-si-KuJ"/>
                             <constraint firstItem="Wfi-sK-rcG" firstAttribute="top" secondItem="I0z-J0-9SM" secondAttribute="top" constant="20" id="ilM-eU-ZLt"/>
                             <constraint firstItem="91u-Gu-qFX" firstAttribute="top" secondItem="I0z-J0-9SM" secondAttribute="top" constant="7" id="kUv-kN-6wt"/>
                             <constraint firstItem="5zb-XV-w4R" firstAttribute="leading" secondItem="91u-Gu-qFX" secondAttribute="leading" id="mGZ-sA-nHM"/>
                             <constraint firstItem="CAA-kE-djJ" firstAttribute="top" secondItem="5zb-XV-w4R" secondAttribute="bottom" constant="15" id="qbc-Xb-g49"/>
+                            <constraint firstItem="2cQ-h2-g6A" firstAttribute="leading" secondItem="I0z-J0-9SM" secondAttribute="leading" constant="1" id="r9u-eF-mzZ"/>
+                            <constraint firstAttribute="trailing" secondItem="2cQ-h2-g6A" secondAttribute="trailing" constant="1" id="rdB-zQ-FHg"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -83,6 +90,7 @@
             <connections>
                 <outlet property="collectionView" destination="CAA-kE-djJ" id="MnP-hC-EoS"/>
                 <outlet property="detailLabel" destination="5zb-XV-w4R" id="aKb-2b-awd"/>
+                <outlet property="progressBar" destination="2cQ-h2-g6A" id="GVp-Gf-z8j"/>
                 <outlet property="soundButton" destination="Wfi-sK-rcG" id="ZEr-PO-33S"/>
                 <outlet property="titleLabel" destination="91u-Gu-qFX" id="IYI-fz-44i"/>
             </connections>

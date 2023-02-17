@@ -4,6 +4,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -21,7 +22,7 @@
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="magnifyingglass" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="SQY-r2-gwG">
                                 <rect key="frame" x="2" y="11.999999999999996" width="18" height="16.333333333333336"/>
-                                <color key="tintColor" red="0.4823529412" green="0.4823529412" blue="0.4823529412" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" systemColor="systemGrayColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="18" id="8Ee-PU-SiT"/>
                                     <constraint firstAttribute="width" constant="18" id="qIc-Kd-6XR"/>
@@ -33,19 +34,18 @@
                                     <constraint firstAttribute="height" constant="20" id="ncR-sQ-WJq"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
-                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow.right" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Ehq-c2-yGK">
                                 <rect key="frame" x="288" y="14.999999999999995" width="16" height="10.333333333333352"/>
-                                <color key="tintColor" red="0.4823529412" green="0.4823529412" blue="0.4823529412" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" systemColor="systemGrayColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="16" id="Dnn-ZB-bMt"/>
                                     <constraint firstAttribute="height" constant="16" id="Dty-Mm-pqj"/>
                                 </constraints>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="Ehq-c2-yGK" firstAttribute="leading" secondItem="KsS-l1-ey8" secondAttribute="trailing" constant="10" id="Qge-3k-Cwt"/>
                             <constraint firstItem="SQY-r2-gwG" firstAttribute="leading" secondItem="byN-1f-JAq" secondAttribute="leading" constant="2" id="YPm-jS-9Ed"/>
@@ -57,7 +57,7 @@
                         </constraints>
                     </view>
                 </subviews>
-                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 <constraints>
                     <constraint firstItem="byN-1f-JAq" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="2" id="KKY-ha-EFQ"/>
                     <constraint firstAttribute="bottom" secondItem="byN-1f-JAq" secondAttribute="bottom" constant="2" id="dMr-xN-h21"/>
@@ -66,7 +66,7 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
-            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <connections>
                 <outlet property="searchButton" destination="Ehq-c2-yGK" id="wlw-HU-Ymb"/>
                 <outlet property="searchLabel" destination="KsS-l1-ey8" id="AuC-l2-E48"/>
@@ -77,5 +77,11 @@
     <resources>
         <image name="arrow.right" catalog="system" width="128" height="95"/>
         <image name="magnifyingglass" catalog="system" width="128" height="117"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGrayColor">
+            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
     </resources>
 </document>
