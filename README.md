@@ -63,11 +63,24 @@ Return values
      word, score
 ## Ekran Görüntüleri
 
-<img src="https://user-images.githubusercontent.com/50744756/219684758-fd8a748b-5f05-44b7-9064-6134cb18ecd6.PNG" width="300" height="568"><img src="https://user-images.githubusercontent.com/50744756/219684764-1f6ec23a-b45b-42bc-9af6-c510a6e2fd9a.PNG" width="300" height="568"><img src="https://user-images.githubusercontent.com/50744756/219684768-6a9a7da7-b29e-4a2f-9439-dba87ca8af3a.PNG" width="300" height="568"><img src="https://user-images.githubusercontent.com/50744756/219684774-25581582-dbd8-4f95-a578-cefe815350e4.PNG" width="300" height="568"><img src="https://user-images.githubusercontent.com/50744756/219684738-0b7d197e-53ba-40bd-8de5-25853c154828.PNG" width="300" height="568">
-<img src="https://user-images.githubusercontent.com/50744756/219684738-0b7d197e-53ba-40bd-8de5-25853c154828.PNG" width="300" height="568">
-<img src="https://user-images.githubusercontent.com/50744756/219684753-1c8364b3-3c48-485c-bbe3-e400abfa691f.PNG" width="300" height="568">
+<img src="https://user-images.githubusercontent.com/50744756/219684758-fd8a748b-5f05-44b7-9064-6134cb18ecd6.PNG" width="300" height="650">  <img src="https://user-images.githubusercontent.com/50744756/219684764-1f6ec23a-b45b-42bc-9af6-c510a6e2fd9a.PNG" width="300" height="650">  <img src="https://user-images.githubusercontent.com/50744756/219684768-6a9a7da7-b29e-4a2f-9439-dba87ca8af3a.PNG" width="300" height="650">  <img src="https://user-images.githubusercontent.com/50744756/219684774-25581582-dbd8-4f95-a578-cefe815350e4.PNG" width="300" height="650">  <img src="https://user-images.githubusercontent.com/50744756/219684738-0b7d197e-53ba-40bd-8de5-25853c154828.PNG" width="300" height="650"> 
+ <img src="https://user-images.githubusercontent.com/50744756/219684738-0b7d197e-53ba-40bd-8de5-25853c154828.PNG" width="300" height="650">  
+ <img src="https://user-images.githubusercontent.com/50744756/219684753-1c8364b3-3c48-485c-bbe3-e400abfa691f.PNG" width="300" height="650">
 ## Demo
 
-Demoya gif veya bağlantı ekleyin
+Detail Page
+
+https://user-images.githubusercontent.com/50744756/219852541-a9c7d290-0fb3-4d2e-b35c-51e87f7af042.mov
+
+Wrong Word Error
+
+https://user-images.githubusercontent.com/50744756/219852552-41b88f3c-8574-4d39-9554-11579a7be864.mov
+
+
+Nil Word Error
+
+https://user-images.githubusercontent.com/50744756/219852554-fa0b108b-4376-4556-b5dd-fb391d965641.mov
+
+
 
   
